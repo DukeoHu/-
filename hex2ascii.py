@@ -1,6 +1,5 @@
 ## Hex  translate to Ascii
 ## 2019 12 19
-## 首先将二进制数按照几个一组转换为10进制数，再将十进制数转换为ASCII编码的字符
 
 def decode(hex_str):
     txt = hex_str
@@ -22,9 +21,9 @@ def decode(hex_str):
                 num = 0
                 continue
 
-        print txt_mid
+        print (txt_mid)
         txt_mid = ""
-        print"\n"
+        print("\n")
         m=m-1
 
 

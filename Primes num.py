@@ -1,0 +1,46 @@
+##Primes Program
+#2019 12 19
+
+#make sure the num is or not is a primes
+def primes(num):
+    tag = 1
+    for i in range(2,num):
+        if num%i == 0:
+            #the num is not a primes
+            tag = 0
+            break
+        if i*i > num:
+            break
+    return tag
+
+
+#make sure its num is or isn`t primes
+def main(start_num,stop_num):
+    flag =0
+    flag2=0
+    mounts = 0
+    ans=""
+    n=0
+    strs =""
+    for j in range(start_num,stop_num):
+        #print j
+        #judge the num is primes
+        flag = primes(j)
+        if flag ==1:
+            strs = str(j)
+            for i in strs:
+                n = n+int(i)
+            flag2=primes(n)
+            n=0
+            if flag2 ==1:
+                ans = ans + strs
+                mounts +=1
+                #print "The " + str(mounts) + " number is: " + ans
+        if mounts == 2:
+            print ("The answer is :" + ans)
+            break
+
+if __name__ == "__main__":
+    start_num=1000000
+    stop_num=10000000
+    main(start_num,stop_num)
